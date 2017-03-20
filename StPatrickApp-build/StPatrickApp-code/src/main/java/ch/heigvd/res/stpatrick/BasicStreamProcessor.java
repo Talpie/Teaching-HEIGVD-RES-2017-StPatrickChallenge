@@ -25,8 +25,13 @@ class BasicStreamProcessor implements IStreamProcessor {
     BufferedReader br = new BufferedReader(in);
     BufferedWriter bw = new BufferedWriter(out);
     int c = br.read();
+    bw.write(c);
     while (c != -1) {
       c = br.read();
+      if(c != -1)
+      {
+    	  bw.write(c);
+      }
     }
     bw.flush();
   }
